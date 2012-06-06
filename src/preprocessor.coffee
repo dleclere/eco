@@ -25,7 +25,9 @@ module.exports = class Preprocessor
 
   printString: (string) ->
     if string.length
-      @record "__out.push #{util.inspectString string}"
+      string = util.trim string
+      string = util.inspectString string
+      @record "__out.push #{string}" if string.length and string != "\n"
 
   beginCode: (options) ->
     @options = options
