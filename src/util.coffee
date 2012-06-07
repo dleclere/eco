@@ -10,7 +10,9 @@ exports.trim = (string) ->
   string
     .replace(/^\s+/, "")
     .replace(/\s+$/, "")
-    .replace(/\s+/g, " ")
+    .replace(/\s{2,}/gm, " ")
+    .replace(/\\n/gm,"")
+    .replace(/<\!--[^\-]+-->/g, "")
 
 specialCharacters =
   '\\': '\\\\'

@@ -3,7 +3,7 @@ util    = require "./util"
 
 module.exports = class Preprocessor
   @preprocess: (source) ->
-    preprocessor = new Preprocessor source
+    preprocessor = new Preprocessor source#.replace(/\s{2,}/gm, "")
     preprocessor.preprocess()
 
   constructor: (source) ->
