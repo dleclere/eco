@@ -10,7 +10,7 @@ exports.trim = (string) ->
   string
     .replace(/^\s+/, "")
     .replace(/\s+$/, "")
-    .replace(/\s{2,}/gm, " ")
+    .replace(/\s+/gm, " ")
     .replace(/\\n/gm,"")
     .replace(/<\!--[^\-]+-->/g, "")
 
