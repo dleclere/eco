@@ -1,3 +1,22 @@
+# Improved web performance and size
+
+I am currently working on a web application using eco templates for both the server
+and client. The plan is to pre-compile the templates using brunch and load keep them
+in the main build file. I just had a looked at the minified output and I was horrified at 
+what eco had done.
+
+* It pushes many meaningless lines to the output array,
+* preserves multiple recurrent white-spaces when just one white space would be appropriate,
+* and leaves html comments in... for fun?
+
+So in light of this I modified the preprocessor and utilities slightly and corrected these
+issues.
+
+Later I would like to modify eco further so that it didn't build a copy of its base functions
+into every template it rendered and instead shared some code brought in through a require.
+This would reduce the framework agnosticism presently enjoyed by eco, so I am going to have to
+think about it a little more...
+
 Eco: Embedded CoffeeScript templates
 ====================================
 
